@@ -1,0 +1,102 @@
+@font-face {
+    font-family: main;
+    src: url(./FONT/FoundersGrotesk-Semibold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #E7E7E2;
+    color: #383631;
+}
+
+.logo {
+    height: 10vh;
+    width: 100%;
+    padding: 1vw 0vw;
+    /* background-color: #111; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo h1{
+    font-family: "main";
+    letter-spacing: 2px;
+    font-size: 4vw;
+}
+
+.image_search{
+    min-height: 5vh;
+    padding: 0.5vw;
+    position: relative;
+}
+
+#searchtext{
+    padding: 0.5vw 2vw;
+    height: 3vw;
+    width: 100%;
+    background-color: #c0c0bf;
+    border: none;
+    color: #383631;
+    border-radius: 50px;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.image_search i{
+    font-size: 1.5vw;
+    position: absolute;
+    right: 2%;
+    top: 30%;
+}
+
+.images{
+    min-height: 100vh;
+    width: 100vw;
+    padding: 1vw;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 400px;
+    gap: 10px; /* Adjust gap as needed */
+}
+
+.item {
+    background-color: #ccc;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+    .logo h1{
+        font-size: 10vw;
+    }
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
+    #searchtext{
+        height: 6vw;
+        font-size: 2.5vw;
+        font-weight: 700;
+    }
+    
+    .image_search i{
+        font-size: 3vw;
+        top: 20%;
+    }
+}
+
