@@ -1,2 +1,4 @@
 # LaxitaImages
-<h1> Hello. </h1>
+pip install -r requirement.txt
+
+
