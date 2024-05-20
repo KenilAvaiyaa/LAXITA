@@ -20,16 +20,7 @@
     </div>
     <div class="images">
         <div class="container">
-            <!-- <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div>
-            <div class="item">img</div> -->
+           
         </div>
     </div>
 
@@ -50,7 +41,7 @@
                         imageUrls.forEach(url => {
                             const imgDiv = document.createElement('div');
                             imgDiv.className = 'item';
-                            imgDiv.innerHTML = `<img src="${url}" alt="Image">`;
+                            imgDiv.innerHTML = `<img src="${url}">`;
                             imagesContainer.appendChild(imgDiv);
                             console.log(imgDiv)
                         });
@@ -68,3 +59,10 @@
 
 
 
+<style>
+    .img {
+        width: 100%; /* Make the image fill the width of the .item container */
+        height: auto; /* Set the height to auto to maintain aspect ratio */
+        display: block; /* Display block to remove any unwanted space below the image */
+    }
+</style>
