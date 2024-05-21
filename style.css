@@ -68,16 +68,14 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 400px;
-    gap: 10px;  
+    gap: 10px; /* Adjust gap as needed */
 }
 
 .item {
-    background-color: #ccc;
-    border: 1px solid #000;
+    width: 100%;
+    height: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    
 }
 
 @media (max-width: 768px) {
