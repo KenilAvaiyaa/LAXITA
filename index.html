@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laxita Design</title>
     <link rel="stylesheet" href="style.css">
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-    rel="stylesheet"
-/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="logo">
         <h1>LAXITA</h1>
@@ -33,7 +32,9 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- <script src="script.js"></script> -->
     <script>
         // Function to open image in a new window
@@ -45,18 +46,37 @@
         function addHoverIconToImage(imgDiv, url) {
             const icon = document.createElement('i');
             icon.className = 'ri-fullscreen-line fullscreen-icon';
-            icon.addEventListener('click', function() {
+            icon.addEventListener('click', function () {
                 openInNewWindow(url);
             });
             imgDiv.appendChild(icon);
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const searchInput = document.getElementById('searchtext');
             const searchIcon = document.querySelector('.ri-search-2-line');
             const imagesContainer = document.querySelector('.container');
-        
-            searchIcon.addEventListener('click', function() {
+
+            // search image using search icon
+            // searchIcon.addEventListener('click', function() {
+            //     const searchTerm = searchInput.value;
+            //     fetch(`http://127.0.0.1:5000/search?q=${encodeURIComponent(searchTerm)}`)
+            //         .then(response => response.json())
+            //         .then(imageUrls => {
+            //             imagesContainer.innerHTML = ''; // Clear current images
+            //             imageUrls.forEach(url => {
+            //                 const imgDiv = document.createElement('div');
+            //                 imgDiv.className = 'item';
+            //                 imgDiv.innerHTML = `<img src="${url}">`;
+            //                 imagesContainer.appendChild(imgDiv);
+            //                 addHoverIconToImage(imgDiv, url); // Add hover icon to image
+            //             });
+            //         })
+            //         .catch(error => console.error('Error:', error));
+            // });
+
+            // serch using enter and icon
+            function serchImage() {
                 const searchTerm = searchInput.value;
                 fetch(`http://127.0.0.1:5000/search?q=${encodeURIComponent(searchTerm)}`)
                     .then(response => response.json())
@@ -71,10 +91,21 @@
                         });
                     })
                     .catch(error => console.error('Error:', error));
+            }
+
+            searchIcon.addEventListener('click', serchImage);
+
+            searchInput.addEventListener('keyup', function (event) {
+                if (event.key === 'Enter') {
+                    serchImage();
+                }
             });
+
+
         });
-        </script>
+    </script>
 </body>
+
 </html>
 
 
