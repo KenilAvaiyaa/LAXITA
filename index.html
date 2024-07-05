@@ -44,6 +44,7 @@
 
         // Add event listener to each image for hover icon functionality
         function addHoverIconToImage(imgDiv, url) {
+            
             const icon = document.createElement('i');
             icon.className = 'ri-fullscreen-line fullscreen-icon';
             icon.addEventListener('click', function () {
@@ -51,6 +52,8 @@
             });
             imgDiv.appendChild(icon);
         }
+
+        // Add event lister of click for display photo in onther tab
 
         document.addEventListener('DOMContentLoaded', function () {
             const searchInput = document.getElementById('searchtext');
